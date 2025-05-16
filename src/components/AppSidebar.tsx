@@ -6,7 +6,6 @@ import BusinessListItem from '@/components/BusinessListItem'
 import { SearchBar } from '@/components/SearchBar'
 
 interface AppSidebarProps {
-  handleSearch: (query: string) => void
   handleSelectBusiness: (business: Business) => void
   filteredBusinesses: Business[]
   selectedBusiness: Business | undefined
@@ -14,7 +13,6 @@ interface AppSidebarProps {
 }
 
 export const AppSidebar = ({
-  handleSearch,
   handleSelectBusiness,
   filteredBusinesses,
   selectedBusiness,
@@ -31,7 +29,7 @@ export const AppSidebar = ({
         <h1 className="mb-4 hidden text-xl font-semibold md:block">
           {t('sidebar.title')}
         </h1>
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar />
       </div>
 
       <div className="border-border border-b px-4 py-3">
