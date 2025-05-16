@@ -23,7 +23,7 @@ export function Component() {
           selectedBusiness={undefined}
           searchQuery={''}
         />
-        <MapContainer />
+        <MapContainer businesses={businesses} />
       </AppLayout>
     </APIProvider>
   )
