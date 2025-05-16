@@ -3,7 +3,9 @@
     "title": "Home Page"
   },
   "sidebar": {
-    "title": "Merchant Search"
+    "title": "Merchant Search",
+    "noResults": "No merchants found",
+    "noResultsDescription": "Try another search or expand the terms"
   },
   "common": {
     "close": "Close"

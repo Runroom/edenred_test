@@ -30,9 +30,9 @@ export const AppSidebar = () => {
       <div className="flex-1 overflow-y-auto">
         {businesses.length === 0 ? (
           <div className="flex h-full flex-col items-center justify-center p-4 text-center">
-            <p className="text-muted-foreground text-lg">No se encontraron comercios</p>
+            <p className="text-muted-foreground text-lg">{t('sidebar.noResults')}</p>
             <p className="text-muted-foreground mt-2 text-sm">
-              Intenta con otra búsqueda o amplía los términos
+              {t('sidebar.noResultsDescription')}
             </p>
           </div>
         ) : (
