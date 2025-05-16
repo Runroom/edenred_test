@@ -4,7 +4,7 @@ import { useApp } from '@/Shared/ui/context/AppContext'
 import { AppWrapper } from '@/components/AppContainer'
 import { AppLayout } from '@/components/AppLayout'
 import { AppSidebar } from '@/components/AppSidebar'
-import BusinessDetail from '@/components/BusinessDetail'
+import { BusinessDetail } from '@/components/BusinessDetail'
 import { MapContainer } from '@/components/MapContainer'
 
 export function Component() {

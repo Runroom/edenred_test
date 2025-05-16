@@ -5,7 +5,10 @@
   "sidebar": {
     "title": "Merchant Search",
     "noResults": "No merchants found",
-    "noResultsDescription": "Try another search or expand the terms"
+    "noResultsDescription": "Try another search or expand the terms",
+    "result": "result",
+    "results": "results",
+    "for": "for"
   },
   "common": {
     "close": "Close"

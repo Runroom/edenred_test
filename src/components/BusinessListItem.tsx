@@ -1,5 +1,4 @@
 import { StarIcon } from 'lucide-react'
-import React from 'react'
 
 import type { Business } from '@/Home/domain/business'
 
@@ -9,11 +8,11 @@ interface BusinessListItemProps {
   onClick: () => void
 }
 
-const BusinessListItem: React.FC<BusinessListItemProps> = ({
+export const BusinessListItem = ({
   business,
   isSelected,
   onClick,
-}) => {
+}: BusinessListItemProps) => {
   return (
     <div
       className={`border-border hover:bg-secondary/50 cursor-pointer border-b p-4 transition-colors ${isSelected ? 'bg-secondary' : ''}`}
@@ -42,5 +41,3 @@ const BusinessListItem: React.FC<BusinessListItemProps> = ({
     </div>
   )
 }
-
-export default BusinessListItem

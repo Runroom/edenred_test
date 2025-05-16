@@ -11,7 +11,7 @@ interface BusinessDetailProps {
   business: Business
 }
 
-const BusinessDetail = ({ business }: BusinessDetailProps) => {
+export const BusinessDetail = ({ business }: BusinessDetailProps) => {
   const { t } = useTranslation()
   const { selectBusiness } = useApp()
 
@@ -100,5 +100,3 @@ const BusinessDetail = ({ business }: BusinessDetailProps) => {
     </div>
   )
 }
-
-export default BusinessDetail
