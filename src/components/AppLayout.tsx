@@ -2,6 +2,7 @@ import { Menu, X } from 'lucide-react'
 import { type PropsWithChildren } from 'react'
 
 import { useApp } from '@/Shared/ui/context/AppContext'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { Button } from '@/components/ui/button'
 
 export const AppLayout = ({ children }: PropsWithChildren) => {
@@ -9,6 +10,7 @@ export const AppLayout = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="flex h-screen flex-col overflow-hidden">
+      <LanguageSwitcher />
       <div className="border-border bg-background flex items-center justify-between border-b px-4 py-3 md:hidden">
         <Button variant="ghost" size="icon" onClick={toggleSidebar}>
           {isSidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

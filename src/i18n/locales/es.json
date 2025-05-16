@@ -1,5 +1,8 @@
 {
   "homePage": {
     "title": "Página de inicio"
+  },
+  "sidebar": {
+    "title": "Buscador de comercios"
   }
 }
