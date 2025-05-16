@@ -5,6 +5,6 @@ import { HOME } from '.'
 export const routes: RouteObject[] = [
   {
     path: HOME,
-    lazy: () => import('../pages/HomePage'),
+    lazy: () => import('../Home/ui/pages/HomePage'),
   },
 ]
