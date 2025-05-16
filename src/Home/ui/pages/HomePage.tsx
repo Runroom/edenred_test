@@ -12,7 +12,14 @@ export function Component() {
   return (
     <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <AppLayout>
-        <AppSidebar isSidebarOpen={true} />
+        <AppSidebar
+          isSidebarOpen={true}
+          handleSearch={() => {}}
+          handleSelectBusiness={() => {}}
+          filteredBusinesses={[]}
+          selectedBusiness={undefined}
+          searchQuery={''}
+        />
         <MapContainer />
       </AppLayout>
     </APIProvider>
