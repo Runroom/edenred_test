@@ -1,24 +1,20 @@
 import { useQuery } from '@tanstack/react-query'
-import { APIProvider, Map } from '@vis.gl/react-google-maps'
+import { APIProvider } from '@vis.gl/react-google-maps'
 
 import { getBusinessesQuery } from '@/Home/ui/queries/businessesQuery'
-import { cn } from '@/lib/utils'
-
-const MEXICO_CITY_CENTER = { lat: 19.4326, lng: -99.1719 }
+import { AppLayout } from '@/components/AppLayout'
+import { AppSidebar } from '@/components/AppSidebar'
+import { MapContainer } from '@/components/MapContainer'
 
 export function Component() {
   const { data: _businesses } = useQuery(getBusinessesQuery())
 
   return (
     <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
-      <Map
-        className={cn('aspect-video w-full')}
-        defaultZoom={12}
-        defaultCenter={MEXICO_CITY_CENTER}
-        gestureHandling="greedy"
-        clickableIcons={false}
-        disableDefaultUI={true}
-      />
+      <AppLayout>
+        <AppSidebar isSidebarOpen={true} />
+        <MapContainer />
+      </AppLayout>
     </APIProvider>
   )
 }

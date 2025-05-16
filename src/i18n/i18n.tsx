@@ -2,18 +2,19 @@ import * as i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
+import en from './locales/en.json'
+import es from './locales/es.json'
+
 export const locale = ['es']
 
 export interface LocaleTypes {
   en: string
   es: string
-  ca: string
 }
 
 export const LOCALE_TYPES: LocaleTypes = {
   en: 'en-EN',
   es: 'es-ES',
-  ca: 'ca-ES',
 }
 
 i18n
@@ -30,6 +31,14 @@ i18n
       },
       react: {
         useSuspense: true,
+      },
+      resources: {
+        es: {
+          translation: es,
+        },
+        en: {
+          translation: en,
+        },
       },
     },
     (err, t) => {

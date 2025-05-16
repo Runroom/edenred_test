@@ -7,7 +7,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 import '@/globals.css'
 import { routes } from '@/router/routes'
 
-import './i18n'
+import './i18n/i18n'
 
 const queryClient = new QueryClient()
 const router = createBrowserRouter(routes)
