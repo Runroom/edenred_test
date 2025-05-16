@@ -8,7 +8,7 @@ export const MapContainer = () => {
   return (
     <div className="relative flex-1">
       <Map
-        className={cn('aspect-video w-full')}
+        className={cn('h-full w-full')}
         defaultZoom={12}
         defaultCenter={MEXICO_CITY_CENTER}
         gestureHandling="greedy"
