@@ -4,5 +4,13 @@
   },
   "sidebar": {
     "title": "Buscador de comercios"
+  },
+  "common": {
+    "close": "Cerrar"
+  },
+  "business": {
+    "hours": "Horario",
+    "phone": "Teléfono",
+    "website": "Sitio web"
   }
 }

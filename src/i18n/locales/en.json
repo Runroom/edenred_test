@@ -4,5 +4,13 @@
   },
   "sidebar": {
     "title": "Merchant Search"
+  },
+  "common": {
+    "close": "Close"
+  },
+  "business": {
+    "hours": "Hours",
+    "phone": "Phone",
+    "website": "Website"
   }
 }
