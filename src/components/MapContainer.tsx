@@ -7,7 +7,7 @@ const MEXICO_CITY_CENTER = { lat: 19.4326, lng: -99.1719 }
 
 export const MapContainer = ({ businesses }: { businesses: Business[] }) => {
   return (
-    <div className="relative flex-1">
+    <div className="h-full w-full">
       <Map
         className={cn('h-full w-full')}
         defaultZoom={12}
