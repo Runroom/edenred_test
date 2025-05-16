@@ -1,15 +1,16 @@
 # Edenred Test Project
 
-This project is a React application built with TypeScript and Vite. It follows a modular
+This project is a React application built with TypeScript and Vite. It follows a hexagonal
 structure for scalability and maintainability.
 
 ## Features
 
 - ⚡️ Fast development with Vite
 - ⚛️ React with TypeScript
-- 📁 Modular folder structure (application, domain, infrastructure, ui)
+- 📁 Hexagonal folder structure (application, domain, infrastructure, ui)
 - 🌍 i18n support
 - 🛠 ESLint and Prettier for code quality
+- ✅ End-to-end testing with Playwright
 
 ## Getting Started
 
@@ -62,6 +63,28 @@ Copy `.env.example` to `.env` and update as needed.
 
 - Lint: `npm run lint`
 - Format: `npm run format`
+
+## Testing
+
+This project uses [Playwright](https://playwright.dev/) for end-to-end testing.
+
+- Tests are located in the `tests/` directory.
+
+### Running Tests
+
+You also need to install the Playwright browsers:
+
+```bash
+npx playwright install
+```
+
+To run the tests, use:
+
+```bash
+npm test
+```
+
+This will launch Playwright and execute all defined tests.
 
 ## License
 
