@@ -7,7 +7,11 @@ import { AppSidebar } from '@/components/AppSidebar'
 import { MapContainer } from '@/components/MapContainer'
 
 export function Component() {
-  const { data: _businesses } = useQuery(getBusinessesQuery())
+  const { data: businesses } = useQuery(getBusinessesQuery())
+
+  if (!businesses) {
+    return <div>Loading...</div>
+  }
 
   return (
     <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
@@ -16,7 +20,7 @@ export function Component() {
           isSidebarOpen={true}
           handleSearch={() => {}}
           handleSelectBusiness={() => {}}
-          filteredBusinesses={[]}
+          filteredBusinesses={businesses}
           selectedBusiness={undefined}
           searchQuery={''}
         />
