@@ -14,6 +14,7 @@ const [useApp, StateContextProvider] = createGenericContext<Context>()
 
 const AppProvider = ({ children }: Props) => {
   const controller = useAppController()
+
   return <StateContextProvider value={{ ...controller }}>{children}</StateContextProvider>
 }
 

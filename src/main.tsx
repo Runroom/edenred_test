@@ -15,11 +15,11 @@ const router = createBrowserRouter(routes)
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <AppProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <AppProvider>
         <RouterProvider router={router} />
         <ReactQueryDevtools initialIsOpen={false} />
-      </QueryClientProvider>
-    </AppProvider>
+      </AppProvider>
+    </QueryClientProvider>
   </StrictMode>,
 )

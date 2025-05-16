@@ -1,11 +1,11 @@
 import { queryOptions } from '@tanstack/react-query'
 
-import { getBusinesses } from '@/Home/application/getBusinesses'
+import { findBusinesses } from '@/Home/application/findBusinesses'
 import { createInMemoryBusinessRepository } from '@/Home/infrastructure/InMemoryBusinessRepository'
 
-export const getBusinessesQuery = () => {
+export const findBusinessesQuery = (searchTerm: string | null) => {
   return queryOptions({
-    queryKey: ['businesses'],
-    queryFn: () => getBusinesses(createInMemoryBusinessRepository()),
+    queryKey: ['businesses', searchTerm],
+    queryFn: () => findBusinesses(createInMemoryBusinessRepository(), searchTerm),
   })
 }
