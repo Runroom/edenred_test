@@ -1,12 +1,13 @@
+import type { Business } from '@/Home/domain/business'
 import BusinessListItem from '@/components/BusinessListItem'
 import { SearchBar } from '@/components/SearchBar'
 
 interface AppSidebarProps {
   isSidebarOpen: boolean
   handleSearch: (query: string) => void
-  handleSelectBusiness: (business: any) => void
-  filteredBusinesses: any[]
-  selectedBusiness: any
+  handleSelectBusiness: (business: Business) => void
+  filteredBusinesses: Business[]
+  selectedBusiness: Business | undefined
   searchQuery: string
 }
 
