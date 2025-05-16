@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import type { Business } from '@/Home/domain/business'
 import { useApp } from '@/Shared/ui/context/AppContext'
 import BusinessListItem from '@/components/BusinessListItem'
@@ -19,6 +21,7 @@ export const AppSidebar = ({
   searchQuery,
 }: AppSidebarProps) => {
   const { isSidebarOpen } = useApp()
+  const { t } = useTranslation()
 
   return (
     <div
@@ -26,7 +29,7 @@ export const AppSidebar = ({
     >
       <div className="border-border border-b p-4">
         <h1 className="mb-4 hidden text-xl font-semibold md:block">
-          Buscador de Comercios
+          {t('sidebar.title')}
         </h1>
         <SearchBar onSearch={handleSearch} />
       </div>
