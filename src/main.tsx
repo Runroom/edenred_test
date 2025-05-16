@@ -5,6 +5,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router'
 import '@/globals.css'
 import { routes } from '@/router/routes'
 
+import './i18n'
+
 const router = createBrowserRouter(routes)
 
 createRoot(document.getElementById('root')!).render(
