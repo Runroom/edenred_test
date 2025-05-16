@@ -3,7 +3,9 @@
     "title": "Página de inicio"
   },
   "sidebar": {
-    "title": "Buscador de comercios"
+    "title": "Buscador de comercios",
+    "noResults": "No se encontraron comercios",
+    "noResultsDescription": "Intenta con otra búsqueda o amplía los términos"
   },
   "common": {
     "close": "Cerrar"

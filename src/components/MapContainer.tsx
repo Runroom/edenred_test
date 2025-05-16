@@ -8,7 +8,7 @@ const MEXICO_CITY_CENTER = { lat: 19.4326, lng: -99.1719 }
 
 export const MapContainer = () => {
   const mapRef = useMap()
-  const { businesses } = useApp()
+  const { businesses, selectBusiness } = useApp()
 
   const fitBounds = useCallback(() => {
     if (!mapRef || businesses.length === 0) return
@@ -58,6 +58,7 @@ export const MapContainer = () => {
           <Marker
             key={business.id}
             position={business.coordinates}
+            onClick={() => selectBusiness(business)}
             icon={{
               url:
                 'data:image/svg+xml;charset=UTF-8,' +

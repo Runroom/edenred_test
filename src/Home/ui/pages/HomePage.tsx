@@ -8,30 +8,15 @@ import BusinessDetail from '@/components/BusinessDetail'
 import { MapContainer } from '@/components/MapContainer'
 
 export function Component() {
-  const { businesses } = useApp()
-  const selectedBusiness = businesses?.[0]
-  const isDetailOpen = true
-
-  if (!businesses) {
-    return <div>Loading...</div>
-  }
+  const { selectedBusiness } = useApp()
 
   return (
     <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
       <AppLayout>
-        <AppSidebar
-          handleSelectBusiness={() => {}}
-          filteredBusinesses={businesses}
-          selectedBusiness={undefined}
-          searchQuery={''}
-        />
+        <AppSidebar />
         <AppWrapper>
           <MapContainer />
-          {selectedBusiness && isDetailOpen && (
-            <div className="absolute right-0 bottom-0 left-0 z-20 max-h-[70vh] p-4 md:right-4 md:bottom-4 md:left-4 md:max-w-md">
-              <BusinessDetail business={selectedBusiness} onClose={() => {}} />
-            </div>
-          )}
+          {selectedBusiness && <BusinessDetail business={selectedBusiness} />}
         </AppWrapper>
       </AppLayout>
     </APIProvider>
