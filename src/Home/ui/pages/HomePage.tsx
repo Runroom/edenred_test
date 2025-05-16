@@ -26,7 +26,7 @@ export function Component() {
           searchQuery={''}
         />
         <AppWrapper>
-          <MapContainer businesses={businesses} />
+          <MapContainer />
           {selectedBusiness && isDetailOpen && (
             <div className="absolute right-0 bottom-0 left-0 z-20 max-h-[70vh] p-4 md:right-4 md:bottom-4 md:left-4 md:max-w-md">
               <BusinessDetail business={selectedBusiness} onClose={() => {}} />

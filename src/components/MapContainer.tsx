@@ -1,11 +1,49 @@
-import { Map, Marker } from '@vis.gl/react-google-maps'
+import { Map, Marker, useMap } from '@vis.gl/react-google-maps'
+import { useCallback, useEffect } from 'react'
 
-import type { Business } from '@/Home/domain/business'
+import { useApp } from '@/Shared/ui/context/AppContext'
 import { cn } from '@/lib/utils'
 
 const MEXICO_CITY_CENTER = { lat: 19.4326, lng: -99.1719 }
 
-export const MapContainer = ({ businesses }: { businesses: Business[] }) => {
+export const MapContainer = () => {
+  const mapRef = useMap()
+  const { businesses } = useApp()
+
+  const fitBounds = useCallback(() => {
+    if (!mapRef || businesses.length === 0) return
+
+    const bounds = new google.maps.LatLngBounds()
+    businesses.forEach(business => {
+      bounds.extend(business.coordinates)
+    })
+
+    mapRef.fitBounds(bounds, 100)
+    if (businesses.length === 1) {
+      mapRef.setZoom(15)
+    }
+  }, [businesses, mapRef])
+
+  useEffect(() => {
+    if (!mapRef) return
+
+    if (businesses.length === 0) {
+      mapRef.panTo(MEXICO_CITY_CENTER)
+      mapRef.setZoom(12)
+
+      return
+    }
+
+    if (businesses.length === 1) {
+      mapRef.panTo(businesses[0].coordinates)
+      mapRef.setZoom(15)
+
+      return
+    }
+
+    fitBounds()
+  }, [businesses, fitBounds, mapRef])
+
   return (
     <div className="h-full w-full">
       <Map
