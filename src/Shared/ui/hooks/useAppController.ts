@@ -10,9 +10,12 @@ import { findBusinessesQuery } from '@/Home/ui/queries/businessesQuery'
 
 export interface IUseAppController {
   businesses: Business[]
+  selectedBusiness: Business | null
+  selectBusiness: (business: Business | null) => void
   isSidebarOpen: boolean
   toggleSidebar: () => void
   form: UseFormReturn<SearchForm>
+  searchTerm: string
 }
 
 export const useAppController = (): IUseAppController => {
@@ -22,8 +25,10 @@ export const useAppController = (): IUseAppController => {
       searchTerm: '',
     },
   })
-  const { data: businesses } = useQuery(findBusinessesQuery(form.watch('searchTerm')))
+  const searchTerm = form.watch('searchTerm')
+  const { data: businesses } = useQuery(findBusinessesQuery(searchTerm))
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true)
+  const [selectedBusiness, setSelectedBusiness] = useState<Business | null>(null)
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen)
@@ -31,8 +36,11 @@ export const useAppController = (): IUseAppController => {
 
   return {
     businesses: businesses ?? [],
+    selectedBusiness,
+    selectBusiness: setSelectedBusiness,
     isSidebarOpen,
     toggleSidebar,
     form,
+    searchTerm,
   }
 }
