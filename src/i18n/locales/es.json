@@ -5,7 +5,10 @@
   "sidebar": {
     "title": "Buscador de comercios",
     "noResults": "No se encontraron comercios",
-    "noResultsDescription": "Intenta con otra búsqueda o amplía los términos"
+    "noResultsDescription": "Intenta con otra búsqueda o amplía los términos",
+    "result": "resultado",
+    "results": "resultados",
+    "for": "para"
   },
   "common": {
     "close": "Cerrar"

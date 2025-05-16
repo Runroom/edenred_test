@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
 import { useApp } from '@/Shared/ui/context/AppContext'
-import BusinessListItem from '@/components/BusinessListItem'
+import { BusinessListItem } from '@/components/BusinessListItem'
 import { SearchBar } from '@/components/SearchBar'
 
 export const AppSidebar = () => {
@@ -21,9 +21,10 @@ export const AppSidebar = () => {
       </div>
 
       <div className="border-border border-b px-4 py-3">
-        <p className="text-muted-foreground text-sm">
-          {businesses.length} {businesses.length === 1 ? 'resultado' : 'resultados'}
-          {searchTerm && ` para "${searchTerm}"`}
+        <p className="text-muted-foreground text-sm" data-testid="business-count">
+          {businesses.length}{' '}
+          {businesses.length === 1 ? t('sidebar.result') : t('sidebar.results')}
+          {searchTerm && ` ${t('sidebar.for')} "${searchTerm}"`}
         </p>
       </div>
 

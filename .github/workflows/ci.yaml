@@ -6,6 +6,22 @@ on:
   pull_request:
 
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['22.x']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: bahmutov/npm-install@v1
+      - run: npx playwright install
+      - run: npm test
+        env:
+          VITE_GOOGLE_MAPS_API_KEY: ${{ secrets.VITE_GOOGLE_MAPS_API_KEY }}
   build:
     name: Build
     runs-on: ubuntu-latest

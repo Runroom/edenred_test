@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "lint": "run-p lint:*",
+    "test": "playwright test",
     "fix:lint": "run-p fix:lint:*",
     "lint:eslint": "eslint .",
     "fix:lint:eslint": "eslint . --fix",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.26.0",
+    "@playwright/test": "1.52.0",
     "@tanstack/eslint-plugin-query": "5.74.7",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "@types/node": "22.15.18",
