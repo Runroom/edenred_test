@@ -4,7 +4,7 @@ import { useCallback, useEffect } from 'react'
 import { useApp } from '@/Shared/ui/context/AppContext'
 import { cn } from '@/lib/utils'
 
-const MEXICO_CITY_CENTER = { lat: 19.4326, lng: -99.1719 }
+const SANTIAGO_CENTER = { lat: -33.45694, lng: -70.64827 }
 
 export const MapContainer = () => {
   const mapRef = useMap()
@@ -28,7 +28,7 @@ export const MapContainer = () => {
     if (!mapRef) return
 
     if (businesses.length === 0) {
-      mapRef.panTo(MEXICO_CITY_CENTER)
+      mapRef.panTo(SANTIAGO_CENTER)
       mapRef.setZoom(12)
 
       return
@@ -49,7 +49,7 @@ export const MapContainer = () => {
       <Map
         className={cn('h-full w-full')}
         defaultZoom={12}
-        defaultCenter={MEXICO_CITY_CENTER}
+        defaultCenter={SANTIAGO_CENTER}
         gestureHandling="greedy"
         clickableIcons={false}
         disableDefaultUI={true}
