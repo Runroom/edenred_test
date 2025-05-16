@@ -1,9 +1,9 @@
 import type { Business } from '@/Home/domain/business'
+import { useApp } from '@/Shared/ui/context/AppContext'
 import BusinessListItem from '@/components/BusinessListItem'
 import { SearchBar } from '@/components/SearchBar'
 
 interface AppSidebarProps {
-  isSidebarOpen: boolean
   handleSearch: (query: string) => void
   handleSelectBusiness: (business: Business) => void
   filteredBusinesses: Business[]
@@ -12,13 +12,14 @@ interface AppSidebarProps {
 }
 
 export const AppSidebar = ({
-  isSidebarOpen,
   handleSearch,
   handleSelectBusiness,
   filteredBusinesses,
   selectedBusiness,
   searchQuery,
 }: AppSidebarProps) => {
+  const { isSidebarOpen } = useApp()
+
   return (
     <div
       className={` ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} border-border bg-background absolute z-10 flex h-[calc(100%-56px)] w-full flex-col border-r transition-transform duration-300 ease-in-out md:relative md:h-full md:w-96 md:translate-x-0`}

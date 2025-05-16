@@ -1,13 +1,11 @@
 import { Menu, X } from 'lucide-react'
-import { type PropsWithChildren, useState } from 'react'
+import { type PropsWithChildren } from 'react'
 
+import { useApp } from '@/Shared/ui/context/AppContext'
 import { Button } from '@/components/ui/button'
 
 export const AppLayout = ({ children }: PropsWithChildren) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true)
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen)
-  }
+  const { toggleSidebar, isSidebarOpen } = useApp()
 
   return (
     <div className="flex h-screen flex-col overflow-hidden">
